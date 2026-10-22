@@ -27,7 +27,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
    - `Ведучі:`;
    - у `<figure class="cover">`: клас `photo--ep-07` → `photo--ep-08`, `aria-label` і підпис `<figcaption>`;
    - `<p class="lead">` — 2–3 речення про гостя (виходить жирним, як лід статті);
-   - у `<div class="player">` — вставте iframe YouTube/Spotify (зразок у коментарі там же) і видаліть заглушку;
+   - у `<div class="player">` — вставте iframe YouTube (зразок у коментарі там же) і видаліть заглушку;
    - вміст `<div class="prose">` — текст розмови:
      - розділи — `<h2>Заголовок</h2>`;
      - репліки — `<p><strong class="speaker">Надя:</strong> Текст…</p>`;
@@ -54,7 +54,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
 
 ## Платформи
 
-Кнопки YouTube / Spotify / Apple Podcasts / Telegram зараз ведуть на `#`. Замініть `href="#"` на справжні посилання (пошук `class="btn" href="#"`) і видаліть рядок-заглушку під кнопками.
+Подкаст поки є тільки на YouTube. Кнопка YouTube зараз веде на `#`. Замініть `href="#"` на справжнє посилання (пошук `class="btn" href="#"`) і видаліть рядок-заглушку під кнопкою.
 
 ## Перегляд локально
 
