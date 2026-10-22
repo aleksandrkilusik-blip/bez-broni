@@ -54,7 +54,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
 
 ## Платформи
 
-Подкаст поки є тільки на YouTube. Кнопка YouTube зараз веде на `#`. Замініть `href="#"` на справжнє посилання (пошук `class="btn" href="#"`) і видаліть рядок-заглушку під кнопкою.
+Подкаст поки є тільки на YouTube. Кнопка на головній і в «Про подкаст» веде на плейлист усіх епізодів: `https://www.youtube.com/playlist?list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm`. На сторінці кожного епізоду — вбудований плеєр і кнопка на конкретне відео.
 
 ## Кеш браузера
 
