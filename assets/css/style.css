@@ -239,6 +239,9 @@ a:hover { text-decoration-thickness: 2px; }
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0 44px; font-size: 15px; }
 .footer-title { font-weight: 700; color: var(--heading); font-size: 18px; }
 .footer-title span { font-weight: 300; color: var(--text); }
+.partners { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 36px; margin: 28px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line); }
+.partners img { display: block; height: 44px; width: auto; opacity: .8; }
+@media (prefers-color-scheme: dark) { .partners img { filter: invert(1); } }
 
 @media (max-width: 960px) {
   .longread { grid-template-columns: minmax(0, 1fr); gap: 32px; }
