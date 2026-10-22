@@ -249,7 +249,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ФОТО. Покладіть файл у assets/img/ і розкоментуйте відповідний рядок.
    Усі фото автоматично стають чорно-білими. */
-.poster-photo { --img: url("../img/hosts.jpg"); }
+.poster-photo { --img: url("../img/poster.jpg"); }
 .avatar--oleksandr { background-image: url("../img/oleksandr.jpg"); }
 .avatar--nadiia { background-image: url("../img/nadiia.jpg"); }
 
