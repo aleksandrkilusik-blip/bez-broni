@@ -51,6 +51,9 @@
       <a href="episodes.html">Усі епізоди →</a>
     </div>
   </div>
+  <div class="carousel">
+  <button class="carousel-side carousel-side--prev" type="button" data-dir="-1" aria-label="Попередні епізоди" aria-controls="latest-track" hidden><span aria-hidden="true">←</span></button>
+  <button class="carousel-side carousel-side--next" type="button" data-dir="1" aria-label="Наступні епізоди" aria-controls="latest-track" hidden><span aria-hidden="true">→</span></button>
   <div class="cards cards--carousel" id="latest-track" role="region" aria-label="Епізоди — гортайте вбік" tabindex="0">
 <article class="card">
   <a class="card-link" href="episodes/ep-07.html">
@@ -130,6 +133,7 @@
   </a>
 </article>
   </div>
+  </div>
 </section>
 
 <section class="wrap section" aria-labelledby="hosts-h">
@@ -171,20 +175,24 @@
   var track = document.getElementById('latest-track');
   var nav = document.querySelector('.carousel-nav');
   if (!track || !nav) return;
-  var prev = nav.querySelector('[data-dir="-1"]');
-  var next = nav.querySelector('[data-dir="1"]');
+  var prevs = document.querySelectorAll('[aria-controls="latest-track"][data-dir="-1"]');
+  var nexts = document.querySelectorAll('[aria-controls="latest-track"][data-dir="1"]');
+  var sides = document.querySelectorAll('.carousel-side');
   nav.hidden = false;
+  sides.forEach(function (b) { b.hidden = false; });
   function step() {
     var card = track.querySelector('.card');
     var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
     return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
   }
   function update() {
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    var atStart = track.scrollLeft <= 2;
+    var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    prevs.forEach(function (b) { b.disabled = atStart; });
+    nexts.forEach(function (b) { b.disabled = atEnd; });
   }
-  nav.addEventListener('click', function (e) {
-    var btn = e.target.closest('button');
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[aria-controls="latest-track"][data-dir]');
     if (btn) track.scrollBy({ left: step() * Number(btn.dataset.dir) });
   });
   track.addEventListener('scroll', update, { passive: true });

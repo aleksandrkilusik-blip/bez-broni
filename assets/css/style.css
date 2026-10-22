@@ -151,6 +151,20 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .carousel-btn:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
 .carousel-btn:disabled { opacity: .3; cursor: default; }
+.carousel { position: relative; padding: 0 64px; }
+.carousel-side {
+  position: absolute; top: 4px; bottom: 14px; z-index: 2; width: 52px;
+  display: grid; place-items: center; padding: 0;
+  border: 1.5px solid var(--heading); border-radius: 10px;
+  background: transparent; color: var(--heading);
+  font: 600 30px/1 var(--font); cursor: pointer;
+  transition: background .15s, color .15s, opacity .2s;
+}
+.carousel-side[hidden] { display: none; }
+.carousel-side--prev { left: 0; }
+.carousel-side--next { right: 0; }
+.carousel-side:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
+.carousel-side:disabled { opacity: .25; cursor: default; }
 .cards--carousel {
   grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 40px) / 3);
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain;
@@ -172,10 +186,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Ведучі */
 .hosts { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); margin: 8px 0 24px; }
-.host { display: flex; gap: 18px; align-items: flex-start; }
+.host { display: flex; gap: 24px; align-items: flex-start; }
 .host h3 { margin-top: 4px; margin-bottom: 6px; }
 .avatar {
-  flex: none; width: 88px; height: 88px; border-radius: 50%;
+  flex: none; width: 160px; height: 160px; border-radius: 4px;
   background: var(--surface) center / cover no-repeat;
   filter: grayscale(1);
   display: grid; place-items: center;
@@ -277,6 +291,8 @@ a:hover { text-decoration-thickness: 2px; }
   .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, transparent 75%); }
   .poster-inner { min-height: 0; padding-top: 46vw; }
   .cards--carousel { grid-auto-columns: 85%; }
+  .carousel { padding: 0; }
+  .carousel-side { display: none; }
 }
 
 @media (max-width: 480px) {
@@ -285,6 +301,8 @@ a:hover { text-decoration-thickness: 2px; }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .lead { font-size: 19px; }
   .site-header ul { gap: 14px; }
+  .host { gap: 16px; }
+  .avatar { width: 120px; height: 120px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
