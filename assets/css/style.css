@@ -172,10 +172,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Ведучі */
 .hosts { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); margin: 8px 0 24px; }
-.host { display: flex; gap: 18px; align-items: flex-start; }
+.host { display: flex; gap: 24px; align-items: flex-start; }
 .host h3 { margin-top: 4px; margin-bottom: 6px; }
 .avatar {
-  flex: none; width: 88px; height: 88px; border-radius: 50%;
+  flex: none; width: 160px; height: 160px; border-radius: 4px;
   background: var(--surface) center / cover no-repeat;
   filter: grayscale(1);
   display: grid; place-items: center;
@@ -285,6 +285,8 @@ a:hover { text-decoration-thickness: 2px; }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .lead { font-size: 19px; }
   .site-header ul { gap: 14px; }
+  .host { gap: 16px; }
+  .avatar { width: 120px; height: 120px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
