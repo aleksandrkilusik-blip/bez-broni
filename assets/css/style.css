@@ -184,7 +184,6 @@ a:hover { text-decoration-thickness: 2px; }
 .avatar {
   flex: none; width: 160px; height: 160px; border-radius: 4px;
   background: var(--surface) center / cover no-repeat;
-  filter: grayscale(1);
   display: grid; place-items: center;
   color: var(--heading); font-weight: 700; font-size: 22px;
   border: 1px solid var(--line);
@@ -260,7 +259,7 @@ a:hover { text-decoration-thickness: 2px; }
 .others .all { font-weight: 600; }
 
 /* ФОТО. Покладіть файл у assets/img/ і розкоментуйте відповідний рядок.
-   Фото на постері — в оригінальних кольорах, аватарки — чорно-білі. */
+   Фото на постері — в оригінальних кольорах, аватарки ведучих — теж у кольорі. */
 .poster-photo { --img: url("../img/poster.jpg"); }
 .avatar--oleksandr { background-image: url("../img/oleksandr.jpg"); }
 .avatar--nadiia { background-image: url("../img/nadiia.jpg"); }
