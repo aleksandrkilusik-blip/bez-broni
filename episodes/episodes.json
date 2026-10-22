@@ -1,0 +1,13 @@
+{
+  "platforms": [
+    { "name": "YouTube", "url": "" },
+    { "name": "Spotify", "url": "" },
+    { "name": "Apple Podcasts", "url": "" },
+    { "name": "Telegram", "url": "" }
+  ],
+  "contacts": [
+    { "name": "Telegram", "url": "" },
+    { "name": "Email", "url": "" }
+  ],
+  "episodes": []
+}
