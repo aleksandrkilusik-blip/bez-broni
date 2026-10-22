@@ -172,16 +172,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Ведучі */
 .hosts { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); margin: 8px 0 24px; }
-.host { display: flex; gap: 18px; align-items: flex-start; }
+.host { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .host h3 { margin-top: 4px; margin-bottom: 6px; }
-.avatar {
-  flex: none; width: 88px; height: 88px; border-radius: 50%;
-  background: var(--surface) center / cover no-repeat;
-  filter: grayscale(1);
-  display: grid; place-items: center;
-  color: var(--heading); font-weight: 700; font-size: 22px;
-  border: 1px solid var(--line);
-}
+/* Фото ведучих — повні, без обрізання й у кольорі */
+.host-photo { display: block; width: 240px; max-width: 100%; height: auto; border-radius: 10px; background: var(--surface); }
 
 /* Лонгрід */
 .longread { display: grid; gap: 56px; grid-template-columns: minmax(0, var(--col)) 300px; justify-content: center; padding-top: 48px; padding-bottom: 72px; }
@@ -253,10 +247,8 @@ a:hover { text-decoration-thickness: 2px; }
 .others .all { font-weight: 600; }
 
 /* ФОТО. Покладіть файл у assets/img/ і розкоментуйте відповідний рядок.
-   Фото на постері — в оригінальних кольорах, аватарки — чорно-білі. */
+   Фото на постері й фото ведучих — в оригінальних кольорах. */
 .poster-photo { --img: url("../img/poster.jpg"); }
-.avatar--oleksandr { background-image: url("../img/oleksandr.jpg"); }
-.avatar--nadiia { background-image: url("../img/nadiia.jpg"); }
 
 /* Підвал */
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0 44px; font-size: 15px; }
