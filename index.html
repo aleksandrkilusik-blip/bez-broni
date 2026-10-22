@@ -43,9 +43,15 @@
 <section class="wrap section" aria-labelledby="latest-h">
   <div class="section-head">
     <h2 id="latest-h">Останні епізоди</h2>
-    <a href="episodes.html">Усі епізоди →</a>
+    <div class="section-actions">
+      <div class="carousel-nav" hidden>
+        <button class="carousel-btn" type="button" data-dir="-1" aria-label="Попередні епізоди" aria-controls="latest-track">←</button>
+        <button class="carousel-btn" type="button" data-dir="1" aria-label="Наступні епізоди" aria-controls="latest-track">→</button>
+      </div>
+      <a href="episodes.html">Усі епізоди →</a>
+    </div>
   </div>
-  <div class="cards">
+  <div class="cards cards--carousel" id="latest-track" role="region" aria-label="Епізоди — гортайте вбік" tabindex="0">
 <article class="card">
   <a class="card-link" href="episodes/ep-07.html">
     <img class="card-thumb" src="assets/img/ep-07-thumb.jpg" width="640" height="360" alt="" loading="lazy">
@@ -76,6 +82,50 @@
     <h3>«Війна навчила мене, що Бог у всьому і скрізь»</h3>
     <span class="card-guest">Гість: Діана Гаврилюк</span>
     <p>Діана — доброволиця медичного батальйону «Госпітальєри» і студентка УБТС за програмою «Християнське консультування». Виросла в пасторській сім'ї.</p>
+    <span class="more">Читати розмову →</span>
+  </a>
+</article>
+<article class="card">
+  <a class="card-link" href="episodes/ep-04.html">
+    <img class="card-thumb" src="assets/img/ep-04-thumb.jpg" width="640" height="360" alt="" loading="lazy">
+    <span class="num" aria-hidden="true">04</span>
+    <span class="card-meta">Епізод 4 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <h3>«Невже мені так само доведеться допомагати доньці?»</h3>
+    <span class="card-guest">Гість: Віктор Гайдучок</span>
+    <p>Віктор Гайдучок — пастор церкви «Преображення» у Львові, заступник старшого пресвітера Львівського регіону, офіцер запасу. Його церква служить військовим і вдовам загиблих, а на війні загинув його зять Богдан.</p>
+    <span class="more">Читати розмову →</span>
+  </a>
+</article>
+<article class="card">
+  <a class="card-link" href="episodes/ep-03.html">
+    <img class="card-thumb" src="assets/img/ep-03-thumb.jpg" width="640" height="360" alt="" loading="lazy">
+    <span class="num" aria-hidden="true">03</span>
+    <span class="card-meta">Епізод 3 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <h3>«Бог може втішити серце так, як не може жодна людина»</h3>
+    <span class="card-guest">Гість: Денис Іващенко</span>
+    <p>Денис — ветеран ЗСУ з позивним «Капелан», євангельський віруючий. Залежність у юності, навернення, служіння складним підліткам, мобілізація, навчання в Британії, полк «Скеля» і поранення на першому бойовому виході.</p>
+    <span class="more">Читати розмову →</span>
+  </a>
+</article>
+<article class="card">
+  <a class="card-link" href="episodes/ep-02.html">
+    <img class="card-thumb" src="assets/img/ep-02-thumb.jpg" width="640" height="360" alt="" loading="lazy">
+    <span class="num" aria-hidden="true">02</span>
+    <span class="card-meta">Епізод 2 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <h3>«Мені краще довіряти Богу»</h3>
+    <span class="card-guest">Гість: Віталій і Христина Москалик</span>
+    <p>Віталій воює з перших днів повномасштабної війни, Христина виховує двох дітей і веде групи підтримки для дружин військових. Розмова про стосунки на відстані, віру на фронті і про те, як церкві й цивільним бути поруч із військовими.</p>
+    <span class="more">Читати розмову →</span>
+  </a>
+</article>
+<article class="card">
+  <a class="card-link" href="episodes/ep-01.html">
+    <img class="card-thumb" src="assets/img/ep-01-thumb.jpg" width="640" height="360" alt="" loading="lazy">
+    <span class="num" aria-hidden="true">01</span>
+    <span class="card-meta">Епізод 1 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <h3>«Хочу, щоб війна в моїй сім'ї закінчилась на мені»</h3>
+    <span class="card-guest">Гість: Роман Пікулік</span>
+    <p>Роман — чоловік, батько, християнин і ветеран. Воював у піхоті, після поранення служив на адміністративних посадах.</p>
     <span class="more">Читати розмову →</span>
   </a>
 </article>
@@ -115,5 +165,32 @@
     </ul>
   </div>
 </footer>
+<script>
+// Кнопки ← → для каруселі «Останні епізоди». Без JS карусель гортається свайпом/тачпадом.
+(function () {
+  var track = document.getElementById('latest-track');
+  var nav = document.querySelector('.carousel-nav');
+  if (!track || !nav) return;
+  var prev = nav.querySelector('[data-dir="-1"]');
+  var next = nav.querySelector('[data-dir="1"]');
+  nav.hidden = false;
+  function step() {
+    var card = track.querySelector('.card');
+    var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+  }
+  function update() {
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  }
+  nav.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (btn) track.scrollBy({ left: step() * Number(btn.dataset.dir) });
+  });
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

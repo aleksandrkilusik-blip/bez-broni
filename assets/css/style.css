@@ -134,6 +134,24 @@ a:hover { text-decoration-thickness: 2px; }
 /* Картки епізодів */
 .cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); margin-top: 8px; }
 .cards--all { margin-top: 32px; }
+
+/* Карусель «Останні епізоди» */
+.section-actions { display: flex; align-items: center; gap: 20px; }
+.carousel-nav { display: flex; gap: 8px; }
+.carousel-nav[hidden] { display: none; }
+.carousel-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--heading); background: transparent; color: var(--heading);
+  font: 600 18px/1 var(--font); cursor: pointer; transition: background .15s, color .15s, opacity .15s;
+}
+.carousel-btn:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
+.carousel-btn:disabled { opacity: .3; cursor: default; }
+.cards--carousel {
+  grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 40px) / 3);
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain;
+  padding: 4px 0 14px; scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+}
+.cards--carousel > .card { scroll-snap-align: start; }
 .card { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); transition: border-color .15s; overflow: hidden; }
 .card-thumb { display: block; width: calc(100% + 48px); max-width: none; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin: -24px -24px 20px; background: var(--poster-bg); }
 .card-thumb--empty { display: grid; place-items: center; }
@@ -246,12 +264,14 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 960px) {
   .longread { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .others { position: static; border-top: 1px solid var(--line); padding-top: 24px; }
+  .cards--carousel { grid-auto-columns: calc((100% - 20px) / 2); }
 }
 
 @media (max-width: 600px) {
   .poster-photo { background-size: 100% auto; background-position: center top; opacity: .75; }
   .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, rgba(0,0,0,0) 75%); }
   .poster-inner { min-height: 0; padding-top: 46vw; }
+  .cards--carousel { grid-auto-columns: 85%; }
 }
 
 @media (max-width: 480px) {
@@ -262,4 +282,4 @@ a:hover { text-decoration-thickness: 2px; }
   .site-header ul { gap: 14px; }
 }
 
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
