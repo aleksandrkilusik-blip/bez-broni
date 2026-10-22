@@ -233,8 +233,6 @@ a:hover { text-decoration-thickness: 2px; }
 /* .poster-photo { --img: url("../img/hosts.jpg"); } */
 /* .avatar--oleksandr { background-image: url("../img/oleksandr.jpg"); } */
 /* .avatar--nadiia { background-image: url("../img/nadiia.jpg"); } */
-/* .photo--ep-02 { --img: url("../img/ep-02.jpg"); } */
-/* .photo--ep-04 { --img: url("../img/ep-04.jpg"); } */
 
 /* Підвал */
 .site-footer { border-top: 1px solid var(--line); padding: 36px 0 44px; font-size: 15px; }
