@@ -142,31 +142,24 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* Карусель «Останні епізоди» */
 .section-actions { display: flex; align-items: center; gap: 20px; }
-.carousel-nav { display: flex; gap: 8px; }
-.carousel-nav[hidden] { display: none; }
-.carousel-btn {
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1.5px solid var(--heading); background: transparent; color: var(--heading);
-  font: 600 18px/1 var(--font); cursor: pointer; transition: background .15s, color .15s, opacity .15s;
-}
-.carousel-btn:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
-.carousel-btn:disabled { opacity: .3; cursor: default; }
-.carousel { position: relative; padding: 0 64px; }
+.carousel { position: relative; container-type: inline-size; --col: calc((100cqw - 40px) / 3); }
 .carousel-side {
-  position: absolute; top: 4px; bottom: 14px; z-index: 2; width: 52px;
-  display: grid; place-items: center; padding: 0;
-  border: 1.5px solid var(--heading); border-radius: 10px;
-  background: transparent; color: var(--heading);
-  font: 600 30px/1 var(--font); cursor: pointer;
-  transition: background .15s, color .15s, opacity .2s;
+  position: absolute; z-index: 2; top: calc(4px + var(--col) * 9 / 32); translate: 0 -50%;
+  width: 52px; height: 52px; border: 0; border-radius: 50%; padding: 0;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, .22); color: #fff;
+  backdrop-filter: blur(14px) saturate(1.8); -webkit-backdrop-filter: blur(14px) saturate(1.8);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .55), inset 0 -1px 1px rgba(0, 0, 0, .12), 0 6px 20px rgba(0, 0, 0, .18);
+  font: 600 22px/1 var(--font); text-shadow: 0 1px 2px rgba(0, 0, 0, .35); cursor: pointer;
+  transition: background .15s, opacity .2s, scale .15s;
 }
 .carousel-side[hidden] { display: none; }
-.carousel-side--prev { left: 0; }
-.carousel-side--next { right: 0; }
-.carousel-side:hover:not(:disabled) { background: var(--heading); color: var(--bg); }
-.carousel-side:disabled { opacity: .25; cursor: default; }
+.carousel-side--prev { left: 12px; }
+.carousel-side--next { right: 12px; }
+.carousel-side:hover:not(:disabled) { background: rgba(255, 255, 255, .34); scale: 1.06; }
+.carousel-side:disabled { opacity: 0; pointer-events: none; }
 .cards--carousel {
-  grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 40px) / 3);
+  grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: var(--col);
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; overscroll-behavior-x: contain;
   padding: 4px 0 14px; scrollbar-width: thin; scrollbar-color: var(--line) transparent;
 }
@@ -283,16 +276,15 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 960px) {
   .longread { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .others { position: static; border-top: 1px solid var(--line); padding-top: 24px; }
-  .cards--carousel { grid-auto-columns: calc((100% - 20px) / 2); }
+  .carousel { --col: calc((100cqw - 20px) / 2); }
 }
 
 @media (max-width: 600px) {
   .poster-photo { background-size: 100% auto; background-position: center top; }
   .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, transparent 75%); }
   .poster-inner { min-height: 0; padding-top: 46vw; }
-  .cards--carousel { grid-auto-columns: 85%; }
-  .carousel { padding: 0; }
-  .carousel-side { display: none; }
+  .carousel { --col: 85cqw; }
+  .carousel-side { width: 44px; height: 44px; font-size: 18px; }
 }
 
 @media (max-width: 480px) {
