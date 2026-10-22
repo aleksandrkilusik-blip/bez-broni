@@ -7,6 +7,7 @@ index.html              головна: постер, опис, платформ
 episodes.html           усі епізоди картками
 about.html              про подкаст і ведучих
 episodes/ep-01.html …   сторінки епізодів (лонгрід із повним текстом розмови)
+en/                     англійська версія: та сама структура (en/index.html, en/episodes/ep-01.html …)
 assets/css/style.css    усі стилі; кольори — CSS-змінні в :root (+ темна тема)
 assets/img/             фото, іконка, лапки-мазок
 ```
@@ -45,6 +46,15 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
    - У картці замініть `<span class="card-thumb card-thumb--empty" …></span>` на
      `<img class="card-thumb" src="assets/img/ep-08-thumb.jpg" width="640" height="360" alt="" loading="lazy">`.
 
+## Англійська версія (en/)
+
+Англійські сторінки лежать у `en/` і повторюють українські: `en/index.html`, `en/episodes.html`, `en/about.html`, `en/episodes/ep-NN.html`. Тексти перенесено з Notion (сторінка «Подкасти» → «EN»). Картинки спільні — з `assets/`.
+
+У шапці кожної сторінки є перемикач **UA / EN** (`<li class="lang-switch">` в кінці меню). Він веде на ту саму сторінку іншою мовою, тому при додаванні епізоду:
+- в українській `episodes/ep-08.html` посилання EN має вести на `../en/episodes/ep-08.html`, в англійській — UA на `../../episodes/ep-08.html`;
+- так само оновіть два рядки `<link rel="alternate" hreflang=…>` у `<head>`;
+- повторіть кроки «Як додати новий епізод» для `en/` (картки в `en/index.html` і `en/episodes.html`, «Other episodes» у `en/episodes/`). Підписи англійською: `Episode 8 · <time …>Month D, YYYY</time>`, `Guest:`, `Read the conversation →`, репліки — `<strong class="speaker">Nadia:</strong>`.
+
 ## Обкладинки і фото
 
 Обкладинки є для всіх 7 епізодів (показуються в кольорі, як зроблені дизайнером).
@@ -58,7 +68,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
 
 ## Кеш браузера
 
-Стилі підключені як `style.css?v=6`. Після змін у `assets/css/style.css` збільште номер (`?v=7` …) в усіх HTML-файлах — інакше браузери можуть показувати старий CSS.
+Стилі підключені як `style.css?v=7`. Після змін у `assets/css/style.css` збільште номер (`?v=8` …) в усіх HTML-файлах — інакше браузери можуть показувати старий CSS.
 
 ## Перегляд локально
 
