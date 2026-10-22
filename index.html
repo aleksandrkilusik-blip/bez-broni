@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Geologica:wght@300;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Перейти до змісту</a>
@@ -35,7 +35,8 @@
 
 <section class="wrap section intro">
   <p class="big">«Без броні» — розмови про людину, війну та віру, які допомагають <mark class="marker">почути одне одного</mark> людям із різним досвідом війни.</p>
-  <p class="serif">Простір, де ми прагнемо говорити відверто, але без цинізму, шукати надію без фальші і говорити про людину, віру і війну — без броні. Кожен випуск можна послухати або прочитати повністю.</p>
+  <p class="serif">Простір, де ми прагнемо говорити відверто, але без цинізму, шукати надію без фальші і говорити про людину, віру і війну — без броні.</p>
+  <p class="serif">Кожен випуск можна послухати або прочитати повністю.</p>
   <ul class="platforms" aria-label="Слухати подкаст"><li><a class="btn" href="https://www.youtube.com/playlist?list=PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm">Дивитися на YouTube</a></li></ul>
 </section>
 
@@ -43,19 +44,18 @@
   <div class="section-head">
     <h2 id="latest-h">Останні епізоди</h2>
     <div class="section-actions">
-      <div class="carousel-nav" hidden>
-        <button class="carousel-btn" type="button" data-dir="-1" aria-label="Попередні епізоди" aria-controls="latest-track">←</button>
-        <button class="carousel-btn" type="button" data-dir="1" aria-label="Наступні епізоди" aria-controls="latest-track">→</button>
-      </div>
       <a href="episodes.html">Усі епізоди →</a>
     </div>
   </div>
+  <div class="carousel">
+  <button class="carousel-side carousel-side--prev" type="button" data-dir="-1" aria-label="Попередні епізоди" aria-controls="latest-track" hidden><span aria-hidden="true">←</span></button>
+  <button class="carousel-side carousel-side--next" type="button" data-dir="1" aria-label="Наступні епізоди" aria-controls="latest-track" hidden><span aria-hidden="true">→</span></button>
   <div class="cards cards--carousel" id="latest-track" role="region" aria-label="Епізоди — гортайте вбік" tabindex="0">
 <article class="card">
   <a class="card-link" href="episodes/ep-07.html">
     <img class="card-thumb" src="assets/img/ep-07-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">07</span>
-    <span class="card-meta">Епізод 7 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 7 · <time datetime="2026-10-16">16 жовтня 2026</time></span>
     <h3>«Війна для мене ніколи не закінчиться»</h3>
     <span class="card-guest">Гість: Артур «Сонік» Сафонов</span>
     <p>Артур — доброволець, колишній командир штурмового відділення ДУК «Правий сектор», дитячий тренер із футболу, батько трьох дітей. До повномасштабного вторгнення займався спортивним служінням місії «Україна для Христа».</p>
@@ -66,7 +66,7 @@
   <a class="card-link" href="episodes/ep-06.html">
     <img class="card-thumb" src="assets/img/ep-06-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">06</span>
-    <span class="card-meta">Епізод 6 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 6 · <time datetime="2026-08-21">21 серпня 2026</time></span>
     <h3>«Я не вмію євангелізувати. Я служу практично»</h3>
     <span class="card-guest">Гість: Михайло Тодікаш</span>
     <p>Михайло — військовий лікар-анестезіолог, який служив в армії з 2014 до 2025 року. Зараз працює у військовому госпіталі в Мукачеві й через церкву служить пораненим військовим і ветеранам.</p>
@@ -77,7 +77,7 @@
   <a class="card-link" href="episodes/ep-05.html">
     <img class="card-thumb" src="assets/img/ep-05-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">05</span>
-    <span class="card-meta">Епізод 5 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 5 · <time datetime="2026-07-17">17 липня 2026</time></span>
     <h3>«Війна навчила мене, що Бог у всьому і скрізь»</h3>
     <span class="card-guest">Гість: Діана Гаврилюк</span>
     <p>Діана — доброволиця медичного батальйону «Госпітальєри» і студентка УБТС за програмою «Християнське консультування». Виросла в пасторській сім'ї.</p>
@@ -88,18 +88,7 @@
   <a class="card-link" href="episodes/ep-04.html">
     <img class="card-thumb" src="assets/img/ep-04-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">04</span>
-    <span class="card-meta">Епізод 4 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
-    <h3>«Невже мені так само доведеться допомагати доньці?»</h3>
-    <span class="card-guest">Гість: Віктор Гайдучок</span>
-    <p>Віктор Гайдучок — пастор церкви «Преображення» у Львові, заступник старшого пресвітера Львівського регіону, офіцер запасу. Його церква служить військовим і вдовам загиблих, а на війні загинув його зять Богдан.</p>
-    <span class="more">Читати розмову →</span>
-  </a>
-</article>
-<article class="card">
-  <a class="card-link" href="episodes/ep-03.html">
-    <img class="card-thumb" src="assets/img/ep-03-thumb.jpg" width="640" height="360" alt="" loading="lazy">
-    <span class="num" aria-hidden="true">03</span>
-    <span class="card-meta">Епізод 3 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 4 · <time datetime="2026-06-11">11 червня 2026</time></span>
     <h3>«Бог може втішити серце так, як не може жодна людина»</h3>
     <span class="card-guest">Гість: Денис Іващенко</span>
     <p>Денис — ветеран ЗСУ з позивним «Капелан», євангельський віруючий. Залежність у юності, навернення, служіння складним підліткам, мобілізація, навчання в Британії, полк «Скеля» і поранення на першому бойовому виході.</p>
@@ -107,10 +96,21 @@
   </a>
 </article>
 <article class="card">
+  <a class="card-link" href="episodes/ep-03.html">
+    <img class="card-thumb" src="assets/img/ep-03-thumb.jpg" width="640" height="360" alt="" loading="lazy">
+    <span class="num" aria-hidden="true">03</span>
+    <span class="card-meta">Епізод 3 · <time datetime="2026-05-08">8 травня 2026</time></span>
+    <h3>«Невже мені так само доведеться допомагати доньці?»</h3>
+    <span class="card-guest">Гість: Віктор Гайдучок</span>
+    <p>Віктор Гайдучок — пастор церкви «Преображення» у Львові, заступник старшого пресвітера Львівського регіону, офіцер запасу. Його церква служить військовим і вдовам загиблих, а на війні загинув його зять Богдан.</p>
+    <span class="more">Читати розмову →</span>
+  </a>
+</article>
+<article class="card">
   <a class="card-link" href="episodes/ep-02.html">
     <img class="card-thumb" src="assets/img/ep-02-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">02</span>
-    <span class="card-meta">Епізод 2 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 2 · <time datetime="2026-03-25">25 березня 2026</time></span>
     <h3>«Мені краще довіряти Богу»</h3>
     <span class="card-guest">Гість: Віталій і Христина Москалик</span>
     <p>Віталій воює з перших днів повномасштабної війни, Христина виховує двох дітей і веде групи підтримки для дружин військових. Розмова про стосунки на відстані, віру на фронті і про те, як церкві й цивільним бути поруч із військовими.</p>
@@ -121,13 +121,14 @@
   <a class="card-link" href="episodes/ep-01.html">
     <img class="card-thumb" src="assets/img/ep-01-thumb.jpg" width="640" height="360" alt="" loading="lazy">
     <span class="num" aria-hidden="true">01</span>
-    <span class="card-meta">Епізод 1 · <span class="todo">[ЗАПОВНИТИ: дата]</span></span>
+    <span class="card-meta">Епізод 1 · <time datetime="2026-02-20">20 лютого 2026</time></span>
     <h3>«Хочу, щоб війна в моїй сім'ї закінчилась на мені»</h3>
     <span class="card-guest">Гість: Роман Пікулік</span>
     <p>Роман — чоловік, батько, християнин і ветеран. Воював у піхоті, після поранення служив на адміністративних посадах.</p>
     <span class="more">Читати розмову →</span>
   </a>
 </article>
+  </div>
   </div>
 </section>
 
@@ -168,22 +169,23 @@
 // Кнопки ← → для каруселі «Останні епізоди». Без JS карусель гортається свайпом/тачпадом.
 (function () {
   var track = document.getElementById('latest-track');
-  var nav = document.querySelector('.carousel-nav');
-  if (!track || !nav) return;
-  var prev = nav.querySelector('[data-dir="-1"]');
-  var next = nav.querySelector('[data-dir="1"]');
-  nav.hidden = false;
+  if (!track) return;
+  var prevs = document.querySelectorAll('[aria-controls="latest-track"][data-dir="-1"]');
+  var nexts = document.querySelectorAll('[aria-controls="latest-track"][data-dir="1"]');
+  document.querySelectorAll('.carousel-side').forEach(function (b) { b.hidden = false; });
   function step() {
     var card = track.querySelector('.card');
     var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
     return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
   }
   function update() {
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    var atStart = track.scrollLeft <= 2;
+    var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    prevs.forEach(function (b) { b.disabled = atStart; });
+    nexts.forEach(function (b) { b.disabled = atEnd; });
   }
-  nav.addEventListener('click', function (e) {
-    var btn = e.target.closest('button');
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[aria-controls="latest-track"][data-dir]');
     if (btn) track.scrollBy({ left: step() * Number(btn.dataset.dir) });
   });
   track.addEventListener('scroll', update, { passive: true });

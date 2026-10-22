@@ -58,7 +58,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
 
 ## Кеш браузера
 
-Стилі підключені як `style.css?v=4`. Після змін у `assets/css/style.css` збільште номер (`?v=3` …) в усіх HTML-файлах — інакше браузери можуть показувати старий CSS.
+Стилі підключені як `style.css?v=6`. Після змін у `assets/css/style.css` збільште номер (`?v=7` …) в усіх HTML-файлах — інакше браузери можуть показувати старий CSS.
 
 ## Перегляд локально
 
