@@ -120,11 +120,8 @@ a:hover { text-decoration-thickness: 2px; }
 .poster-photo {
   position: absolute; inset: 0;
   background: var(--img, none) 30% 30% / cover no-repeat;
-  filter: grayscale(1) contrast(1.05);
-  mix-blend-mode: luminosity;
-  opacity: .55;
 }
-.poster-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--poster-shade), transparent 60%); }
+.poster-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--poster-shade), transparent 65%); }
 .poster-inner { position: relative; min-height: min(78vh, 640px); display: flex; flex-direction: column; justify-content: flex-end; padding-top: 80px; padding-bottom: 56px; }
 .poster h1 { color: var(--poster-text); font-size: clamp(64px, 17vw, 190px); font-weight: 700; line-height: .9; letter-spacing: -.03em; margin: 18px 0 12px; }
 .poster-sub { font-size: clamp(20px, 3.4vw, 30px); font-weight: 300; margin: 0; color: var(--poster-text); opacity: .85; }
@@ -254,7 +251,7 @@ a:hover { text-decoration-thickness: 2px; }
 .others .all { font-weight: 600; }
 
 /* ФОТО. Покладіть файл у assets/img/ і розкоментуйте відповідний рядок.
-   Усі фото автоматично стають чорно-білими. */
+   Фото на постері — в оригінальних кольорах, аватарки — чорно-білі. */
 .poster-photo { --img: url("../img/poster.jpg"); }
 .avatar--oleksandr { background-image: url("../img/oleksandr.jpg"); }
 .avatar--nadiia { background-image: url("../img/nadiia.jpg"); }
@@ -274,7 +271,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @media (max-width: 600px) {
-  .poster-photo { background-size: 100% auto; background-position: center top; opacity: .75; }
+  .poster-photo { background-size: 100% auto; background-position: center top; }
   .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, transparent 75%); }
   .poster-inner { min-height: 0; padding-top: 46vw; }
   .cards--carousel { grid-auto-columns: 85%; }
