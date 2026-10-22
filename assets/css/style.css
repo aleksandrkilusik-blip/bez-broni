@@ -1,15 +1,17 @@
 /* Без броні — стилі сайту. Усі кольори — змінні нижче. */
 :root {
-  --bg: #ffffff;
-  --surface: #f6f5f3;
-  --line: #e4e1dc;
-  --text: #686868;
-  --heading: #111111;
-  --accent: #b5562b;
-  --accent-soft: rgba(181, 86, 43, .22);
-  --on-accent: #ffffff;
-  --poster-bg: #1a1a1a;
-  --poster-text: #ffffff;
+  /* Палітра бренду: глибокий бірюзово-зелений + кремовий (як на постері «Без броні.») */
+  --bg: #f6f1ea;
+  --surface: #ede5da;
+  --line: #ddd2c4;
+  --text: #56605e;
+  --heading: #0c3537;
+  --accent: #2a6b67;
+  --accent-soft: rgba(205, 168, 120, .4);
+  --on-accent: #ecdcc8;
+  --poster-bg: #0c3537;
+  --poster-shade: rgba(8, 41, 44, .85);
+  --poster-text: #ecdcc8;
   --todo-bg: #fff3c4;
   --todo-text: #5c4700;
   --font: "Geologica", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -18,15 +20,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121212;
-    --surface: #1c1c1c;
-    --line: #2e2e2e;
-    --text: #b0b0b0;
-    --heading: #f2f2f2;
-    --accent: #e08a5e;
-    --accent-soft: rgba(224, 138, 94, .25);
-    --on-accent: #121212;
-    --poster-bg: #0b0b0b;
+    --bg: #08292c;
+    --surface: #0e3538;
+    --line: #1d4a4c;
+    --text: #b9c4c0;
+    --heading: #ecdcc8;
+    --accent: #d9b98f;
+    --accent-soft: rgba(217, 185, 143, .25);
+    --on-accent: #08292c;
+    --poster-bg: #061f21;
+    --poster-shade: rgba(6, 31, 33, .9);
     --todo-bg: #3d3416;
     --todo-text: #ffe58a;
   }
@@ -116,13 +119,14 @@ a:hover { text-decoration-thickness: 2px; }
   position: absolute; inset: 0;
   background: var(--img, none) 30% 30% / cover no-repeat;
   filter: grayscale(1) contrast(1.05);
-  opacity: .6;
+  mix-blend-mode: luminosity;
+  opacity: .55;
 }
-.poster-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 60%); }
+.poster-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--poster-shade), transparent 60%); }
 .poster-inner { position: relative; min-height: min(78vh, 640px); display: flex; flex-direction: column; justify-content: flex-end; padding-top: 80px; padding-bottom: 56px; }
 .poster h1 { color: var(--poster-text); font-size: clamp(64px, 17vw, 190px); font-weight: 700; line-height: .9; letter-spacing: -.03em; margin: 18px 0 12px; }
-.poster-sub { font-size: clamp(20px, 3.4vw, 30px); font-weight: 300; margin: 0; color: #e6e6e6; }
-.poster .sticker { align-self: flex-start; }
+.poster-sub { font-size: clamp(20px, 3.4vw, 30px); font-weight: 300; margin: 0; color: var(--poster-text); opacity: .85; }
+.poster .sticker { align-self: flex-start; background: var(--poster-text); color: var(--poster-bg); }
 .poster-todo { margin-top: 20px; align-self: flex-start; }
 
 .intro { max-width: calc(var(--col) + 40px); }
@@ -155,7 +159,7 @@ a:hover { text-decoration-thickness: 2px; }
 .card { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); transition: border-color .15s; overflow: hidden; }
 .card-thumb { display: block; width: calc(100% + 48px); max-width: none; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin: -24px -24px 20px; background: var(--poster-bg); }
 .card-thumb--empty { display: grid; place-items: center; }
-.card-thumb--empty::after { content: "Без броні"; color: #fff; font-weight: 700; font-size: 28px; letter-spacing: -.01em; opacity: .9; }
+.card-thumb--empty::after { content: "Без броні"; color: var(--poster-text); font-weight: 700; font-size: 28px; letter-spacing: -.01em; opacity: .9; }
 .card:hover { border-color: var(--accent); }
 .card-link { display: flex; flex-direction: column; height: 100%; padding: 24px; color: var(--text); text-decoration: none; }
 .card .num { font-size: 32px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 14px; }
@@ -269,7 +273,7 @@ a:hover { text-decoration-thickness: 2px; }
 
 @media (max-width: 600px) {
   .poster-photo { background-size: 100% auto; background-position: center top; opacity: .75; }
-  .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, rgba(0,0,0,0) 75%); }
+  .poster-photo::after { background: linear-gradient(to top, var(--poster-bg) 45%, transparent 75%); }
   .poster-inner { min-height: 0; padding-top: 46vw; }
   .cards--carousel { grid-auto-columns: 85%; }
 }
