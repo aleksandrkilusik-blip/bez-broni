@@ -34,6 +34,7 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
      - репліки — `<p><strong class="speaker">Надя:</strong> Текст…</p>`;
      - велика цитата — `<blockquote class="pullquote"><p>Цитата.</p><footer>Ім'я Прізвище</footer></blockquote>`;
      - виділення маркером — `<mark class="marker">ключова фраза</mark>` (помірно, 1 на сторінку);
+   - наприкінці `<div class="prose">` залиште дисклеймер `<hr>` + `<p class="note">Текстова версія не є дослівною розшифровкою…</p>` (в англійській — «The text version is not a verbatim transcript…»);
    - у `<aside class="others">` приберіть пункт 8 (себе) і додайте пункт 7.
 2. **Списки епізодів.**
    - `episodes.html` — скопіюйте верхню `<article class="card">…</article>` і поставте над нею з новими даними (номер, дата, назва, гість, 1–2 речення, посилання `episodes/ep-08.html`).
