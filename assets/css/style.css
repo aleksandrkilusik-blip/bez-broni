@@ -223,6 +223,13 @@ a:hover { text-decoration-thickness: 2px; }
 .prose .speaker { margin-right: .2em; }
 .prose ol { padding-left: 1.3em; }
 .prose li { margin-bottom: .7em; }
+/* Фото з запису всередині тексту розмови */
+.prose .rec-photo { margin: 2em 0; }
+.prose .rec-photo img { display: block; width: auto; max-width: 100%; max-height: 80vh; height: auto; margin: 0 auto; border-radius: 6px; }
+.prose .rec-photo--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.prose .rec-photo--pair img { width: 100%; max-height: none; }
+.prose .rec-photo--pair figcaption { grid-column: 1 / -1; }
+.prose .rec-photo figcaption { margin-top: 8px; font-size: 14px; font-weight: 600; text-align: center; }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0 24px; }
 .note { font-size: 15px; font-style: italic; }
 
