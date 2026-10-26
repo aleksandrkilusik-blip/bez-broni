@@ -187,7 +187,9 @@ a:hover { text-decoration-thickness: 2px; }
 .host { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
 .host h3 { margin-top: 4px; margin-bottom: 6px; }
 /* Фото ведучих — повні, без обрізання й у кольорі */
-.host-photo { display: block; width: 240px; max-width: 100%; height: auto; border-radius: 10px; background: var(--surface); }
+.host-photo { display: block; width: 240px; max-width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 10px; background: var(--surface); }
+.host-photo[src$="oleksandr.jpg"] { object-position: 50% 15%; }
+.host-photo[src$="nadiia.jpg"] { object-position: 45% 50%; }
 
 /* Лонгрід */
 .longread { display: grid; gap: 56px; grid-template-columns: minmax(0, var(--col)) 300px; justify-content: center; padding-top: 48px; padding-bottom: 72px; }
