@@ -120,6 +120,11 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 16px;
 }
 .btn:hover { background: var(--heading); color: var(--bg); }
+/* Головна кнопка YouTube: більша й заповнена, щоб було видно, що відео — тут */
+.btn--yt { display: inline-flex; align-items: center; gap: 12px; padding: 16px 30px; font-size: 19px; font-weight: 700; background: var(--heading); color: var(--bg); box-shadow: 0 6px 18px rgba(12, 53, 55, .18); }
+.btn--yt::before { content: ""; width: 0; height: 0; border-style: solid; border-width: 8px 0 8px 13px; border-color: transparent transparent transparent currentColor; }
+.btn--yt:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.section-note { margin: 4px 0 0; color: var(--text); font-size: 16px; }
 
 /* Постер на головній */
 .poster { position: relative; background: var(--poster-bg); color: var(--poster-text); overflow: hidden; }
