@@ -47,6 +47,19 @@ Settings → Pages → Build and deployment → Source: **Deploy from a branch**
    - У картці замініть `<span class="card-thumb card-thumb--empty" …></span>` на
      `<img class="card-thumb" src="assets/img/ep-08-thumb.jpg" width="640" height="360" alt="" loading="lazy">`.
 
+## Нові випуски з YouTube (автоматично)
+
+На головній (`index.html` і `en/index.html`) є блок «Нові випуски на YouTube» / «New on YouTube»: 3 найновіші відео подкасту з обкладинкою, назвою і датою.
+
+1. Кожні 6 годин GitHub запускає скрипт `scripts/update_episodes.py` (workflow `.github/workflows/update-episodes.yml`).
+2. Скрипт читає публічну RSS-стрічку плейлиста подкасту (`PLF7PYvFUKJXKWFEcvs6UVisVNEZm91Sbm`), ключ YouTube не потрібен. Shorts пропускає, бере 3 найновіші відео.
+3. Якщо з'явилося нове відео, скрипт оновлює обидві головні, комітить у `main`, і GitHub Pages публікує сайт. Від нового відео до появи на сайті мине не більше 6 годин.
+4. Оновити одразу: вкладка **Actions** → «Оновити випуски з YouTube» → **Run workflow**.
+
+**Не правте вручну** HTML між `<!-- YT:START … -->` і `<!-- YT:END -->`: наступний запуск перезапише зміни. Заголовок і підпис блоку над маркерами правити можна. Карусель «Останні епізоди в текстах» скрипт не чіпає, її, як і раніше, оновлюємо вручну, коли готовий текст (див. «Як додати новий епізод»).
+
+Перевірка без мережі на власній стрічці: `python3 scripts/update_episodes.py --feed-file feed.xml`.
+
 ## Англійська версія (en/)
 
 Англійські сторінки лежать у `en/` і повторюють українські: `en/index.html`, `en/episodes.html`, `en/about.html`, `en/episodes/ep-NN.html`. Тексти перенесено з Notion (сторінка «Подкасти» → «EN»). Картинки спільні — з `assets/`.
